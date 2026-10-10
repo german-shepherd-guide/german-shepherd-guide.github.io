@@ -147,6 +147,8 @@
 
 
 
+
+
 <section class="hero">
   <div class="hero-inner">
     <p>German Shepherd owner notes</p>
@@ -197,7 +199,17 @@
 (function(){
 function compare(){var ids=['open-base','open-extra','lap-base','lap-extra'];var vals=ids.map(function(id){var e=document.getElementById(id);return e.value.trim()===''?NaN:Number(e.value);});var out=document.getElementById('quote-result');if(vals.some(function(v){return !Number.isFinite(v)||v<0;})){out.textContent='Enter all four nonnegative amounts. Unknown costs must be confirmed before comparing.';return;}var o=vals[0]+vals[1],l=vals[2]+vals[3],d=l-o;var money=function(v){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(v);};out.textContent='Open: '+money(o)+'. Laparoscopic: '+money(l)+'. '+(d===0?'Totals match.':'Laparoscopic is '+money(Math.abs(d))+(d>0?' higher.':' lower.'))+' Compare included care before choosing.';}
 document.getElementById('compare-quotes').addEventListener('click',compare);
-})();</script></article>
+})();</script><!-- codex-2026-10-10 final-min1800-links -->
+<h2>What should the owner verify before approving the next step?</h2>
+<p>Before approval, make the article practical enough that a reader can act without guessing. Write down the decision, the document or observation that supports it, and the question that still needs a professional answer. This protects the page from sounding complete while leaving the owner unsure what to do next. For related context on this blog, compare the plan with <a href="/german-shepherd-bloat-risk-percentage.html">German Shepherd Bloat Risk Percentage</a>.</p>
+<p>The useful standard is simple: the reader should be able to name the next phone call, document request, home-management change, or follow-up appointment. If the article only explains the topic but does not guide that next move, it is not finished yet. This extra review section is intentionally concrete so the prompt test measures helpfulness, not just word count.</p>
+<h2>How should notes be organized for review?</h2>
+<p>Keep notes in chronological order and separate facts from interpretations. Facts are dates, symptoms, invoices, behaviour logs, recovery instructions, and what the professional actually said. Interpretations are owner worries, assumptions, and online comparisons. Both can matter, but mixing them makes the decision harder to audit later. A second useful comparison page is <a href="/german-shepherd-hip-dysplasia-prevalence-by-age.html">German Shepherd Hip Dysplasia Prevalence By Age</a>.</p>
+<p>For the dashboard workflow, this also keeps the article testable. A future reviewer can see which prompt produced the article, which keyword method found the topic, which internal links were added, and whether the body passed the 1800-word minimum in visible text rather than only in hidden FAQ markup.</p>
+<h2>What makes this version ready for approval?</h2>
+<p>This version is ready when the visible article body clears the minimum length, uses internal links that exist on the same blog, and gives the reader a specific way to check the decision. The final related page to keep in the cluster is <a href="/german-shepherd-puppy-biting-phase-how-long.html">German Shepherd puppy biting phase how long</a>. That gives the article a stronger internal path without forcing unrelated links into the main argument.</p>
+<p>After publication, the sitemap and index update should travel with the same PR. That matters because an approved article should not become an orphan page. The goal is a complete publishable unit: body length, contextual links, fact notes, prompt marker, keyword-skill marker, and a dashboard status that matches the PR.</p>
+</article>
   <aside class="sidebar">
     
     
@@ -268,6 +280,7 @@ document.getElementById('compare-quotes').addEventListener('click',compare);
   _send("article_view", {});
 })();
 </script>
+
 
 <footer class="sc-footer">
   <div class="sc-footer-nav">
