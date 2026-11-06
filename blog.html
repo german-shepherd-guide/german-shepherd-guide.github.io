@@ -7,354 +7,12 @@
 <meta name="description" content="Every German Shepherd Guide article in one list, newest first: practical guides about German Shepherds.">
 <link rel="canonical" href="https://german-shepherd-guide.github.io/blog.html">
 <meta name="robots" content="index, follow">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Tahoma', 'Geneva', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #222;
-    background: #f8f8f8;
-  }
-  a { color: #92400e; text-decoration: none; }
-  a:hover { text-decoration: underline; color: #74330b; }
 
-  /* ── Top bar ── */
-  .topbar {
-    background: #92400e;
-    color: #fff;
-    padding: 0 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  }
-  .topbar-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 54px;
-  }
-  .topbar-brand {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.01em;
-  }
-  .topbar-nav {
-    display: flex;
-    gap: 4px;
-    list-style: none;
-  }
-  .topbar-nav a {
-    color: rgba(255,255,255,0.88);
-    font-size: 0.88rem;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background 0.15s;
-  }
-  .topbar-nav a:hover {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    text-decoration: none;
-  }
-  @media(max-width:600px) {
-    .topbar-nav { display: none; }
-  }
 
-  /* ── Breadcrumb ── */
-  .breadcrumb {
-    background: #fff;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .breadcrumb-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 8px 20px;
-    font-size: 0.82rem;
-    color: #6b7280;
-  }
-  .breadcrumb-inner a { color: #92400e; }
-  .breadcrumb-inner span { margin: 0 5px; }
 
-  /* ── Layout wrapper ── */
-  .page-wrap {
-    max-width: 1120px;
-    margin: 28px auto;
-    padding: 0 20px 64px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 28px;
-    align-items: start;;grid-template-columns:minmax(0, 1fr) 300px;gap:26px;padding-left:22px;padding-right:22px;}
-  @media (max-width: 700px) {
-    .page-wrap { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-  }
 
-  /* ── Main ── */
-  .main-content {
-    background: #fff;
-    border-radius: 8px;
-    padding: 28px 28px 32px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .main-content h1 {
-    font-size: 1.75rem;
-    color: #74330b;
-    margin-bottom: 10px;
-    line-height: 1.3;
-    border-bottom: 3px solid #92400e;
-    padding-bottom: 12px;
-  }
-  .main-content .intro {
-    color: #555;
-    margin-bottom: 28px;
-    font-size: 1rem;
-  }
-  .article-card {
-    border: 1px solid #e5e7eb;
-    border-left: 4px solid #92400e;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    background: #fafafa;
-    transition: box-shadow 0.2s;
-  }
-  .article-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
-  .article-card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-  }
-  .article-card h2 a { color: #74330b; }
-  .article-card .meta { color: #9ca3af; font-size: 0.8rem; margin-bottom: 6px; }
-  .article-card p { color: #555; font-size: 0.93rem; margin: 0; }
 
-  /* ── Categories ── */
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .cat-tag {
-    background: #92400e;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
 
-  /* ── Sidebar ── */
-  .sidebar { position: sticky; top: 70px; }
-  .sidebar-widget {
-    background: #92400e;
-    border-radius: 10px;
-    padding: 22px 18px;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.13);
-    margin-bottom: 20px;
-  }
-  .sidebar-widget h3 { font-size: 1rem; margin-bottom: 8px; font-weight: 700; }
-  .sidebar-widget p { font-size: 0.86rem; margin-bottom: 12px; opacity: 0.9; }
-  .sidebar-widget input[type="email"] {
-    width: 100%; padding: 9px 11px; border: none; border-radius: 5px;
-    font-size: 0.88rem; margin-bottom: 8px; outline: none;
-  }
-  .sidebar-widget button {
-    width: 100%; padding: 10px; background: #fff; color: #92400e;
-    border: none; border-radius: 5px; font-weight: 700; font-size: 0.88rem;
-    cursor: pointer;
-  }
-  .sidebar-widget .disclaimer {
-    font-size: 0.7rem; opacity: 0.65; margin-top: 8px; text-align: center;
-  }
-  .sidebar-about {
-    background: #fff; border-radius: 8px; padding: 18px 16px;
-    font-size: 0.88rem; color: #444; line-height: 1.6;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    margin-bottom: 20px;
-  }
-  .sidebar-about strong { color: #74330b; display: block; margin-bottom: 6px; font-size: 0.95rem; }
-  .sidebar-links {
-    background: #fff; border-radius: 8px; padding: 16px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .sidebar-links h4 { font-size: 0.9rem; color: #74330b; margin-bottom: 10px; }
-  .sidebar-links ul { list-style: none; }
-  .sidebar-links li { padding: 4px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.86rem; }
-  .sidebar-links li:last-child { border: none; }
-  .sidebar-links a { color: #92400e; }
-
-  /* ── Footer ── */
-  .footer {
-    background: #74330b;
-    color: rgba(255,255,255,0.75);
-    text-align: center;
-    padding: 24px 16px;
-    font-size: 0.82rem;
-    margin-top: 40px;
-  }
-  .footer-nav { margin-bottom: 8px; }
-  .footer-nav a {
-    color: rgba(255,255,255,0.85);
-    margin: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  /* ── Bottom mobile bar (wariant bottom_mobile) ── */
-  #bottom-bar input[type="email"] { flex: 1; min-width: 0; }
-  @media (max-width: 480px) {
-    #bottom-bar span { display: none; }
-  }
-</style>
-<style id="sc-font">body{font-family:'Tahoma', 'Geneva', sans-serif}body h1,body h2,body h3{font-family:'Tahoma', 'Geneva', sans-serif}</style>
-<style id="site-chrome">
-:where(body){margin:0}.sc-reset,header.sc-topbar,footer.sc-footer{box-sizing:border-box}
-[class*="wrap"],[class*="inner"],[class*="layout"],[class*="container"]{box-sizing:border-box}
-/* ── Top bar ── */
-  .sc-topbar{
-    background: #92400e;
-    color: #fff;
-    padding: 0 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  }
-.sc-topbar-inner{
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 54px;
-  }
-.sc-topbar-brand{
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.01em;
-  }
-.sc-topbar-nav{
-    display: flex;
-    gap: 4px;
-    list-style: none;
-  }
-.sc-topbar-nav a{
-    color: rgba(255,255,255,0.88);
-    font-size: 0.88rem;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background 0.15s;
-  }
-.sc-topbar-nav a:hover{
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    text-decoration: none;
-  }
-@media(max-width:600px) {
-    .sc-topbar-nav { display: none; }}
-/* ── Footer ── */
-  .sc-footer{
-    background: #74330b;
-    color: rgba(255,255,255,0.75);
-    text-align: center;
-    padding: 24px 16px;
-    font-size: 0.82rem;
-    margin-top: 40px;
-  }
-.sc-footer-nav{ margin-bottom: 8px; }
-.sc-footer-nav a{
-    color: rgba(255,255,255,0.85);
-    margin: 0 10px;
-    font-size: 0.85rem;
-  }
-.sc-topbar a,.sc-footer a{text-decoration:none}
-/* links blue: the most recognisable clickable colour (owner 2026-10-13); not the bar, footer, buttons or cards */
-a:not(.sc-topbar *):not(.sc-footer *):not(header *):not(footer *):not([class*="button"]):not([class*="btn"]):not([class*="-card"]):not([class*="badge"]):not(.sidebar-link):not(.sc-topbar-brand):not([style*="background"]){color:#0066cc!important}a:not(.sc-topbar *):not(.sc-footer *):not(header *):not(footer *):not([class*="button"]):not([class*="btn"]):not([class*="-card"]):not([class*="badge"]):not(.sidebar-link):not(.sc-topbar-brand):not([style*="background"]):visited{color:#0052a3!important}a:not(.sc-topbar *):not(.sc-footer *):not(header *):not(footer *):not([class*="button"]):not([class*="btn"]):not([class*="-card"]):not([class*="badge"]):not(.sidebar-link):not(.sc-topbar-brand):not([style*="background"]):hover{text-decoration:underline}
-/* site name always readable on the bar, whatever the article CSS does with links (owner 2026-10-13) */
-.sc-topbar .sc-topbar-brand,.sc-topbar .sc-topbar-brand:visited,.sc-topbar .sc-topbar-brand:hover{color:#fff!important}
-@media(max-width:700px){header[class^="sc-"] [class*="inner"],header[class^="sc-"]{flex-wrap:wrap;height:auto}header[class^="sc-"] nav,header[class^="sc-"] [class*="nav"]{display:flex;flex-wrap:wrap;gap:6px 14px}header[class^="sc-"] [class*="inner"]{padding-top:8px;padding-bottom:8px}main,article,aside,[class*="wrap"]>*,[class*="layout"]>*,[class*="content"],[class*="column"]{min-width:0!important;max-width:100%}table{display:block!important;width:auto!important;max-width:100%!important;overflow-x:auto}img,iframe,video{max-width:100%;height:auto}h1,h2,h3,p,li{overflow-wrap:anywhere}[class*="wrap"],[class*="layout"],[class*="rich"],[class*="content"]{grid-template-columns:minmax(0,1fr)!important}article *,[class*="content"] *,[class*="rich"] *{box-sizing:border-box!important;max-width:100%!important;min-width:0!important}table{overflow-x:auto!important}}
-</style>
-<style id="sc-shepherd-design">
-:root{--p:#f2eee6;--i:#1c1a17;--m:#5f574c;--l:#ddd3c3;--d:#1c1a17;--od:#f3eadb;--a:#b5651d;--ai:#8a4b12;--card:#fbf8f2;--bar:#1c1a17;--bart:#f3eadb;--r:0px;--hf:Georgia,'Times New Roman',serif;--bf:Arial,'Helvetica Neue',sans-serif;--p2:#e8d8c6}
-body{background:var(--p)!important;color:var(--i);font-family:var(--bf)!important}html body :is(h1,h2,h3,h4){font-family:var(--hf)!important}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--ai);outline-offset:3px}
-header.sc-topbar{background:var(--bar)!important;color:var(--bart);box-shadow:none;border-bottom:3px solid var(--a);position:sticky;top:0;z-index:100}
-header.sc-topbar .sc-topbar-inner{max-width:1240px;height:auto;min-height:68px;padding:10px 28px;gap:18px}
-header.sc-topbar a.sc-topbar-brand:is(#_,a),header.sc-topbar a.sc-topbar-brand:is(#_,a):visited{color:var(--bart)!important;font:800 1.4rem/1.1 var(--hf);letter-spacing:-.02em;text-transform:none}
-header.sc-topbar .sc-topbar-nav{gap:2px;margin:0;padding:0;flex-wrap:wrap}
-header.sc-topbar .sc-topbar-nav a{display:block;color:var(--bart);padding:10px 13px;min-height:44px;border-radius:var(--r);font-weight:600;font-size:.86rem}
-header.sc-topbar .sc-topbar-nav a:hover,header.sc-topbar .sc-topbar-nav a[aria-current="page"]{background:var(--bart);color:var(--bar);text-decoration:none}
-.breadcrumb{background:transparent!important;border:0!important}.breadcrumb-inner{max-width:1240px!important;margin:0 auto;padding:14px 28px;font-size:.78rem;color:var(--m)}
-.sd-cover{position:relative;max-width:1184px;margin:6px auto 34px;overflow:hidden;border-radius:var(--r)}
-.sd-cover h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.04;letter-spacing:-.03em;margin:0 0 18px;color:inherit;text-transform:none;text-wrap:balance}
-.sd-cover .intro{font-size:1.06rem;line-height:1.75;margin:0 0 20px;max-width:46ch;color:inherit;opacity:.88}
-.sd-cover .categories{display:flex;flex-wrap:wrap;gap:8px;margin:0}
-.sd-cover .cat-tag{border-radius:var(--r);padding:7px 12px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--card);color:var(--ai);border:1px solid var(--a)}
-.sd-art{min-height:220px;background:repeating-linear-gradient(135deg,#b5651d 0 14px,transparent 14px 34px)}
-.page-wrap{max-width:1240px;margin:0 auto;padding:0 28px 56px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start}
-.main-content{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-content:start;background:transparent!important;box-shadow:none!important;padding:0!important;border:0!important}
-.main-content>:not(article){grid-column:1/-1}
-.main-content>article{position:relative;min-width:0;margin:0!important;padding:26px!important;background:var(--card)!important;border:1px solid var(--l)!important;border-radius:var(--r)!important;box-shadow:none;transition:transform .15s,box-shadow .15s}
-.main-content>article h2{font-size:1.3rem!important;line-height:1.25!important;margin:0 0 12px!important}
-.main-content>article h2 a::after{content:"";position:absolute;inset:0}
-.main-content>article p{color:var(--m)!important;font-size:.92rem!important;line-height:1.7}
-.main-content>article p:first-of-type{color:var(--ai)!important;font-size:.72rem!important;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-.sidebar :is(.sidebar-about,.sidebar-links,.sidebar-panel){background:var(--card)!important;border:1px solid var(--l)!important;border-radius:var(--r)!important;box-shadow:none!important}
-.sidebar :is(h3,h4){color:var(--ai)!important;font-size:.76rem!important;letter-spacing:.1em;text-transform:uppercase}
-.sidebar-about strong{color:var(--i)}
-.hero{background:#1c1a17!important;color:#f3eadb!important;border-bottom:4px solid var(--a)}
-.hero h1{color:#f3eadb!important;letter-spacing:-.02em;text-transform:none}.hero p{color:#f3eadb!important;opacity:.9}
-.layout{max-width:1240px!important}.hero-inner{max-width:1240px!important;padding-left:22px;padding-right:22px}
-.article,article.article{background:var(--card)!important;border:1px solid var(--l);border-radius:var(--r)!important;box-shadow:none!important}
-.article h2{color:var(--i);border-bottom:2px solid var(--a);padding-bottom:6px}.article h3{color:var(--i)}
-.article th{background:var(--p2)!important;color:var(--i)!important}
-.article blockquote{border-left:4px solid var(--a);background:var(--p2);margin:22px 0;padding:14px 20px}
-.wrap .panel{background:var(--card)!important;border:1px solid var(--l);border-top:5px solid var(--a);border-radius:var(--r)!important;box-shadow:none!important}
-.wrap .panel h1{color:var(--i);text-transform:none}
-footer.sc-footer{background:var(--d)!important;color:var(--od)!important;border-top:6px solid var(--a);padding:34px 20px;margin-top:48px}
-footer.sc-footer a{color:var(--od)!important;display:inline-block;padding:10px 4px}
-
-.sd-cover{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:end;padding:40px 36px;background:var(--p2);border-left:12px solid var(--a);color:var(--i)}
-.sd-cover .intro{color:var(--m);opacity:1}
-.sd-art{min-height:220px;border-radius:var(--r);background-color:var(--d)}
-.main-content>article{border:2px solid var(--i)!important;box-shadow:6px 6px 0 var(--a)}
-.main-content>article:first-of-type{grid-column:1/-1;padding:34px!important}
-.main-content>article:first-of-type h2{font-size:1.9rem!important}
-.main-content>article:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--a)}
-@media(max-width:900px){.page-wrap{grid-template-columns:minmax(0,1fr)!important}.main-content{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:760px){header.sc-topbar .sc-topbar-inner{display:block;padding:14px 16px}header.sc-topbar a.sc-topbar-brand:is(#_,a){display:block;margin-bottom:10px}
-header.sc-topbar nav{display:block!important}header.sc-topbar .sc-topbar-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}header.sc-topbar .sc-topbar-nav a{padding:11px 2px;text-align:center;font-size:.8rem}
-.breadcrumb-inner{padding:12px 16px}.sd-cover{display:block!important;margin:4px 16px 26px;padding:0}.sd-cover-text,.sd-cover.sd-centered{padding:30px 22px}
-.sd-cover h1{font-size:2.4rem}.sd-art{min-height:90px;margin:0;box-shadow:none}
-.sidebar{display:grid!important;position:static!important;gap:16px;margin-top:24px}aside[class*="sidebar"]:not(.sidebar){display:block!important;position:static!important;margin-top:24px}.page-wrap{padding:0 16px 40px}.main-content{grid-template-columns:minmax(0,1fr)!important}.main-content>article{padding:22px!important}.main-content>article:first-of-type h2{font-size:1.5rem!important}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
-</style>
-
-<style id="sidebar-follow-20261025">
-[data-follow-sidebar]{display:grid!important;gap:16px;position:sticky!important;top:96px!important;align-self:start!important;
-height:fit-content!important;max-height:calc(100dvh - 112px)!important;overflow-y:auto!important;
-min-width:0;overscroll-behavior:contain;scrollbar-width:thin}
-[data-follow-parent]{overflow:visible!important;align-items:start}
-.follow-sidebar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;
-width:min(1184px,calc(100% - 32px));margin:32px auto;align-items:start}
-[data-follow-content]{width:auto!important;max-width:100%!important;min-width:0;margin:0!important}
-.follow-sidebar-panel{padding:18px;border:1px solid var(--line,#d8d9d0);border-radius:12px;
-background:var(--soft,#f4f5ef);color:var(--ink,#27382d);margin:0 0 16px}
-.follow-sidebar-panel h2{font:700 .85rem/1.4 system-ui;margin:0 0 12px}
-.follow-sidebar-panel ul{list-style:none;margin:0;padding:0}
-.follow-sidebar-panel a{display:block;padding:8px 0;color:inherit;text-decoration:underline;
-overflow-wrap:anywhere;line-height:1.45}
-@media(max-width:900px){[data-follow-sidebar]{position:static!important;top:auto!important;
-max-height:none!important;height:auto!important;overflow:visible!important;width:100%!important;max-width:100%;float:none!important}
-.follow-sidebar-layout{grid-template-columns:minmax(0,1fr);gap:24px}}
-</style>
 
 <!-- social-cards:start -->
 <meta property="og:title" content="All Guides About German Shepherds, Newest First | German Shepherd Guide">
@@ -373,196 +31,245 @@ max-height:none!important;height:auto!important;overflow:visible!important;width
 <meta name="twitter:image" content="https://german-shepherd-guide.github.io/assets/social-share-20261025.jpg">
 <meta name="twitter:image:alt" content="German Shepherd standing on a rocky hill above a lake - AI-generated illustration">
 <!-- social-cards:end -->
-</head>
+<style id="gsd-design">
+@font-face{font-family:"IBM Plex Sans Condensed";src:url(/assets/gsd/plex-cond-400-latin.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans Condensed";src:url(/assets/gsd/plex-cond-600-latin.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans Condensed";src:url(/assets/gsd/plex-cond-700-latin.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(/assets/gsd/plex-mono-500-latin.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--gsd-blue:#13508e;--gsd-deep:#0a2d52;--gsd-line:#a8cdf0;--gsd-paper:#eef4fa;--gsd-sheet:#fbfdff;--gsd-ink:#0d2137;--gsd-muted:#45596e;--gsd-grid:#cfdeee;--gsd-red:#b3361c;--gsd-wash:#dce9f6;--gsd-cond:"IBM Plex Sans Condensed","Arial Narrow",sans-serif;--gsd-mono:"IBM Plex Mono",Menlo,Consolas,monospace;--gsd-gfill:var(--gsd-sheet)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--gsd-ink);font:400 18px/1.7 var(--gsd-cond);background-color:var(--gsd-paper);background-image:linear-gradient(rgba(19,80,142,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(19,80,142,.05) 1px,transparent 1px);background-size:24px 24px}
+h1,h2,h3,h4{font-family:var(--gsd-cond);font-weight:700;line-height:1.12;color:var(--gsd-ink);overflow-wrap:break-word;margin:0 0 .5em}
+p{margin:0 0 1em}a{color:var(--gsd-blue);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+img,iframe,video{max-width:100%}img{height:auto}button,input,select,textarea{font:inherit}
+:focus-visible{outline:3px solid #0066cc;outline-offset:3px}
+.gsd-shell{width:min(1200px,calc(100% - 96px));margin:0 auto}
+.gsd-skip{position:absolute;left:-10000px;top:10px;z-index:300;background:var(--gsd-sheet);color:var(--gsd-blue);border:2px solid var(--gsd-blue);padding:10px 16px;font:500 14px/1.2 var(--gsd-mono)}
+.gsd-skip:focus{left:12px}
+.gsd-field{background-color:var(--gsd-blue);background-image:linear-gradient(rgba(168,205,240,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(168,205,240,.2) 1px,transparent 1px),linear-gradient(rgba(168,205,240,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(168,205,240,.08) 1px,transparent 1px);background-size:96px 96px,96px 96px,24px 24px,24px 24px;color:#fff}
+.gsd-label,.kicker{font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-blue);margin:0 0 12px}
+.gsd-field .gsd-label,.gsd-field .kicker{color:var(--gsd-line)}
+.gsd-btn,.gsd-tool button{display:inline-flex;align-items:center;gap:10px;background:var(--gsd-blue);color:#fff;border:1.5px solid var(--gsd-blue);border-radius:0;padding:14px 22px;font:500 13.5px/1.2 var(--gsd-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.gsd-btn:visited{color:#fff}
+.gsd-btn:hover,.gsd-tool button:hover,.card:hover,.gsd-sig:hover,.gsd-route:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--gsd-red)}
+.gsd-btn.gsd-light,.gsd-btn.gsd-light:visited{background:var(--gsd-sheet);color:var(--gsd-blue);border-color:var(--gsd-sheet)}
+.gsd-textlink{font:500 13.5px/1.3 var(--gsd-mono);letter-spacing:.1em;text-transform:uppercase}
+.gsd-field .gsd-textlink,.gsd-field .gsd-textlink:visited{color:#fff}
+.gsd-glyph{display:block;stroke:currentColor;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gsd-r-b,.gsd-r-t{stroke-width:1.1}.gsd-r-a{stroke-width:3.2}.gsd-r-h{fill:var(--gsd-gfill);stroke-width:1.5}
+.gsd-r-g{stroke-width:1.1;stroke-dasharray:2.4 2}.gsd-r-gh{stroke-width:1.2;stroke-dasharray:2 1.6}
+.gsd-r-m{stroke-width:1.3}.gsd-r-mg{stroke-width:1.3;stroke-dasharray:2.4 2}.gsd-r-f{fill:currentColor;stroke:none}
+.gsd-top{position:relative}
+.gsd-top-in{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 0}
+.gsd-brand,.gsd-brand:visited{display:grid;grid-template-columns:repeat(3,auto);border:1.5px solid #fff;color:#fff;text-decoration:none;flex:none}
+.gsd-brand b{grid-column:1/-1;font:700 23px/1 var(--gsd-cond);letter-spacing:.05em;text-transform:uppercase;padding:11px 14px 9px;border-bottom:1px solid var(--gsd-line)}
+.gsd-brand span{font:500 10.5px/1 var(--gsd-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gsd-line);padding:7px 12px}
+.gsd-brand span+span{border-left:1px solid var(--gsd-line)}
+.gsd-nav{display:flex;align-items:center;gap:26px}
+.gsd-nav a,.gsd-nav a:visited{color:#fff;text-decoration:none;font:500 13px/1 var(--gsd-mono);letter-spacing:.1em;text-transform:uppercase;padding:10px 0;border-bottom:1.5px solid transparent}
+.gsd-nav a span{color:var(--gsd-line);margin-right:6px}
+.gsd-nav a:hover{border-bottom-color:#fff}
+.gsd-nav a.gsd-nav-cta{border:1.5px solid #fff;padding:11px 16px}
+.gsd-nav a.gsd-nav-cta:hover{background:#fff;color:var(--gsd-blue)}.gsd-nav a.gsd-nav-cta:hover span{color:var(--gsd-blue)}
+.gsd-ruler{height:12px;background:repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 96px) 0 100%/100% 10px no-repeat,repeating-linear-gradient(90deg,var(--gsd-line) 0 1px,transparent 1px 12px) 0 100%/100% 5px no-repeat,var(--gsd-deep)}
+.gsd-index{display:none}
+.gsd-hero{padding:0}
+.gsd-hero-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center;padding:80px 0 88px}
+.gsd-hero h1{color:#fff;font-size:clamp(46px,5.8vw,86px);line-height:.95;letter-spacing:.01em;text-transform:uppercase;margin:4px 0 26px}
+.gsd-hero h1 span{display:block;color:var(--gsd-line)}
+.gsd-dim{display:flex;align-items:center;gap:14px;margin:0 0 26px;max-width:600px;font:500 12px/1.4 var(--gsd-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gsd-line)}
+.gsd-dim::before,.gsd-dim::after{content:"";flex:1;height:9px;background:linear-gradient(var(--gsd-line),var(--gsd-line)) 0 50%/100% 1px no-repeat}
+.gsd-dim::before{border-left:1px solid var(--gsd-line)}.gsd-dim::after{border-right:1px solid var(--gsd-line)}
+.gsd-lead{font-size:21px;line-height:1.6;max-width:600px;color:#e9f2fb}
+.gsd-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:30px}
+.gsd-detail{position:relative;margin:0;padding:0}
+.gsd-detail::before{content:"";position:absolute;inset:-14px;border:1.5px solid var(--gsd-line);-webkit-mask:conic-gradient(at 26px 26px,transparent 75%,#000 0) 0 0/calc(100% - 26px) calc(100% - 26px);mask:conic-gradient(at 26px 26px,transparent 75%,#000 0) 0 0/calc(100% - 26px) calc(100% - 26px);pointer-events:none}
+.gsd-detail img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:72% 20%;border:1.5px solid #fff}
+.gsd-detail figcaption{font:500 12px/1.5 var(--gsd-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gsd-line);margin-top:24px}
+.gsd-callout,.gsd-callout:visited{position:absolute;left:-36px;bottom:42px;display:flex;align-items:center;gap:12px;background:var(--gsd-deep);border:1.5px solid #fff;color:#fff;text-decoration:none;padding:10px 16px 10px 10px;font:600 17px/1.2 var(--gsd-cond);max-width:270px}
+.gsd-callout b{flex:none;display:grid;place-items:center;width:40px;height:40px;border:1.5px solid #fff;border-radius:50%;font:500 17px/1 var(--gsd-mono)}
+.gsd-callout:hover{background:var(--gsd-sheet);color:var(--gsd-blue)}.gsd-callout:hover b{border-color:var(--gsd-blue)}
+.gsd-section{padding:80px 0}
+.gsd-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;padding-bottom:18px;background:repeating-linear-gradient(90deg,var(--gsd-blue) 0 18px,transparent 18px 23px,var(--gsd-blue) 23px 26px,transparent 26px 31px) 0 100%/100% 1px no-repeat}
+.gsd-head h2{font-size:clamp(32px,3.4vw,46px);text-transform:uppercase;letter-spacing:.01em;margin:0}
+.gsd-head .gsd-label{display:flex;align-items:center;gap:12px;margin-bottom:8px}.gsd-head .gsd-label::before{content:"";width:28px;height:1.5px;background:currentColor}
+.gsd-field .gsd-head{background-image:repeating-linear-gradient(90deg,var(--gsd-line) 0 18px,transparent 18px 23px,var(--gsd-line) 23px 26px,transparent 26px 31px)}
+.gsd-field .gsd-head h2{color:#fff}
+.gsd-sample{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.gsd-sig{background:var(--gsd-sheet);border:1.5px solid var(--gsd-blue);color:var(--gsd-blue);padding:16px 18px 18px;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.gsd-sig-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px solid var(--gsd-grid);padding-bottom:8px}
+.gsd-sig-top b{font:700 28px/1 var(--gsd-cond);text-transform:uppercase;color:var(--gsd-ink)}
+.gsd-sig-top span{font:500 12px/1 var(--gsd-mono);letter-spacing:.1em;color:var(--gsd-muted)}
+.gsd-sig .gsd-glyph{width:100%;max-width:190px;margin:10px auto}
+.gsd-sig p{margin:0;font-size:16px;line-height:1.45;color:var(--gsd-ink)}
+.gsd-sample-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;margin-top:32px;border:1.5px dashed var(--gsd-blue);padding:18px 22px;background:var(--gsd-sheet)}
+.gsd-sample-cta p{margin:0;max-width:640px}
+.gsd-register{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:gsd}
+.card{position:relative;min-width:0;display:flex;flex-direction:column;background-color:var(--gsd-sheet);background-image:linear-gradient(rgba(19,80,142,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(19,80,142,.05) 1px,transparent 1px);background-size:12px 12px;border:1.5px solid var(--gsd-blue);padding:26px 24px 0;counter-increment:gsd;transition:transform .15s,box-shadow .15s}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid var(--gsd-blue);-webkit-mask:conic-gradient(at 12px 12px,transparent 75%,#000 0) 0 0/calc(100% - 12px) calc(100% - 12px);mask:conic-gradient(at 12px 12px,transparent 75%,#000 0) 0 0/calc(100% - 12px) calc(100% - 12px);pointer-events:none}
+.card .kicker{order:0;font-size:11.5px;margin:0 0 10px}
+.card h2,.card h3{order:1;font-size:22px;font-weight:600;line-height:1.22;margin:0 0 10px}
+.card h2 a,.card h3 a{color:var(--gsd-ink);text-decoration:none}.card h2 a:hover,.card h3 a:hover{color:var(--gsd-blue);text-decoration:underline}
+.card p:last-child{order:2;margin:0 0 22px;font-size:16.5px;line-height:1.55;color:var(--gsd-muted)}
+.card .card-date{order:3;margin:auto -24px 0;border-top:1.5px solid var(--gsd-blue);padding:9px 24px;font:500 12px/1.4 var(--gsd-mono);letter-spacing:.1em;color:var(--gsd-ink);display:flex;gap:10px;background:var(--gsd-sheet)}
+.card .card-date::before{content:"Date"; text-transform:uppercase;color:var(--gsd-muted)}
+.card .card-date::after{content:"Sheet " counter(gsd,decimal-leading-zero);margin-left:auto;text-transform:uppercase;color:var(--gsd-blue)}
+.gsd-register:not(.gsd-register-all) .card:nth-child(n+7){display:none}
+.gsd-bom{width:100%;border-collapse:collapse;color:#fff}
+.gsd-bom th{font:500 12px/1.4 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-line);text-align:left;padding:0 18px 12px 0;border-bottom:1.5px solid var(--gsd-line)}
+.gsd-bom td{padding:18px 18px 18px 0;border-bottom:1px solid #3a6a9c;vertical-align:middle;font-size:19px}
+.gsd-bom td:first-child{font:500 14px/1 var(--gsd-mono);color:var(--gsd-line);width:90px}
+.gsd-bom td:nth-child(2){font:500 54px/1 var(--gsd-mono);width:170px;color:#fff}
+.gsd-routes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.gsd-route{position:relative;background:var(--gsd-sheet);border:1.5px solid var(--gsd-blue);padding:28px 26px 26px;transition:transform .15s,box-shadow .15s}
+.gsd-route-no{position:absolute;top:-22px;left:22px;display:grid;place-items:center;width:44px;height:44px;border:1.5px solid var(--gsd-blue);border-radius:50%;background:var(--gsd-paper);font:500 16px/1 var(--gsd-mono);color:var(--gsd-blue)}
+.gsd-route svg{width:58px;height:58px;stroke:var(--gsd-blue);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin:12px 0 10px}
+.gsd-route h3{font-size:25px;font-weight:600}.gsd-route p{color:var(--gsd-muted);font-size:17px}
+.gsd-steps{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;counter-reset:gsdstep;position:relative;border-top:1.5px solid var(--gsd-blue)}
+.gsd-steps::before,.gsd-steps::after{content:"";position:absolute;top:-6.5px;width:0;height:0;border:5.5px solid transparent}
+.gsd-steps::before{left:-2px;border-right:11px solid var(--gsd-blue);border-left:0}.gsd-steps::after{right:-2px;border-left:11px solid var(--gsd-blue);border-right:0}
+.gsd-steps li{counter-increment:gsdstep;position:relative;padding:34px 0 0}
+.gsd-steps li::before{content:"Step " counter(gsdstep,decimal-leading-zero);position:absolute;top:10px;left:0;font:500 12px/1 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-blue)}
+.gsd-steps li::after{content:"";position:absolute;top:-8px;left:0;width:1.5px;height:14px;background:var(--gsd-blue)}
+.gsd-steps h3{font-size:24px;font-weight:600;margin-top:6px}.gsd-steps p{color:var(--gsd-muted);font-size:17px}
+.gsd-close{background-color:var(--gsd-deep)}
+.gsd-close-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;padding:84px 0}
+.gsd-close h2{color:#fff;font-size:clamp(36px,4.4vw,60px);text-transform:uppercase;line-height:1}
+.gsd-close ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 30px;padding:0;margin:0;font:500 13px/1.6 var(--gsd-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gsd-line)}
+.gsd-close li::before{content:"\2713\00A0"}
+.gsd-stamp{display:grid;justify-items:center;gap:18px}
+.gsd-stamp p{margin:0;transform:rotate(-5deg);border:4px double var(--gsd-line);padding:12px 18px;font:500 15px/1.35 var(--gsd-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gsd-line);text-align:center}
+.gsd-foot{background:var(--gsd-deep);color:#e9f2fb;padding:56px 0 0}
+.gsd-foot a,.gsd-foot a:visited{color:#fff}
+.gsd-tb{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;border:1.5px solid var(--gsd-line)}
+.gsd-tb>*{padding:20px 22px;border-left:1px solid #3a6a9c;min-width:0}.gsd-tb>:first-child{border-left:0}
+.gsd-tb-h{display:block;font:500 11.5px/1.4 var(--gsd-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gsd-line);margin:0 0 12px}
+.gsd-tb b{display:block;font:700 27px/1.05 var(--gsd-cond);letter-spacing:.04em;text-transform:uppercase;color:#fff;margin:0 0 12px}
+.gsd-tb p{font-size:15.5px;line-height:1.55;max-width:460px}
+.gsd-tb ul{list-style:none;margin:0;padding:0}.gsd-tb li{margin:0 0 6px;font-size:15.5px}
+.gsd-rev{font:500 12.5px/1.6 var(--gsd-mono);color:#e9f2fb}
+.gsd-legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:18px 0 24px;font:500 12px/1.5 var(--gsd-mono);letter-spacing:.06em;color:var(--gsd-line)}
+.gsd-scale{display:inline-flex;align-items:center;gap:10px}.gsd-scale i{display:block;width:150px;height:8px;border:1px solid var(--gsd-line);background:repeating-linear-gradient(90deg,var(--gsd-line) 0 30px,transparent 30px 60px)}
+.layout{width:min(1200px,calc(100% - 96px));margin:44px auto 84px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start}
+.gsd-column{min-width:0}
+.article-breadcrumb,.breadcrumb-inner{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font:500 12.5px/1.6 var(--gsd-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gsd-muted)}
+.article-breadcrumb{margin:0 0 20px}
+.article-breadcrumb a,.breadcrumb-inner a{color:var(--gsd-blue)}
+.article-breadcrumb [aria-current],.breadcrumb-inner [aria-current]{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gsd-post-head h1{font-size:clamp(30px,2.9vw,42px);line-height:1.1;margin:0 0 16px}
+.gsd-post-head .lead{font-size:20px;line-height:1.6;color:var(--gsd-muted);margin:0}
+.gsd-post-head .hero-photo{position:relative;margin:28px 0 0}
+.gsd-post-head .hero-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:72% 20%;border:1.5px solid var(--gsd-blue)}
+.gsd-post-head .hero-photo::before{content:"";position:absolute;inset:10px 10px auto;height:calc(100% - 44px);border:1.5px solid #fff;-webkit-mask:conic-gradient(at 18px 18px,transparent 75%,#000 0) 0 0/calc(100% - 18px) calc(100% - 18px);mask:conic-gradient(at 18px 18px,transparent 75%,#000 0) 0 0/calc(100% - 18px) calc(100% - 18px);pointer-events:none}
+.gsd-post-head .hero-photo figcaption{font:500 12px/1.5 var(--gsd-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gsd-muted);margin-top:8px}
+.article{min-width:0;margin-top:30px;background:var(--gsd-sheet);border:1px solid var(--gsd-grid);border-top:4px solid var(--gsd-blue);padding:44px 52px;overflow-wrap:break-word;counter-reset:gsdsec}
+.article>:first-child{margin-top:0}
+.article h2{font-size:30px;font-weight:700;margin:48px 0 16px}
+.article>h2{counter-increment:gsdsec;padding-top:18px;background:repeating-linear-gradient(90deg,var(--gsd-grid) 0 18px,transparent 18px 23px,var(--gsd-grid) 23px 26px,transparent 26px 31px) 0 0/100% 1px no-repeat}
+.article>h2::before{content:"\00A7\00A0" counter(gsdsec,decimal-leading-zero);display:block;margin-bottom:6px;font:500 12.5px/1.4 var(--gsd-mono);letter-spacing:.14em;color:var(--gsd-blue)}
+.article h3{font-size:23px;font-weight:600;margin:30px 0 10px}
+.article ul,.article ol{padding-left:24px;margin:0 0 1.1em}.article li{margin:0 0 6px}
+.article a{color:#0066cc}.article a:visited{color:#0052a3}
+.article .meta{font:500 12.5px/1.6 var(--gsd-mono);letter-spacing:.06em;color:var(--gsd-muted)}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:16.5px;line-height:1.5}
+.article th,.article td{border:1px solid var(--gsd-grid);padding:10px 12px;text-align:left;vertical-align:top}
+.article th{background:var(--gsd-paper);font-weight:600}
+.article details{border-top:1px solid var(--gsd-grid);padding:12px 0}
+.article summary{cursor:pointer;font-weight:600;font-size:19px;color:var(--gsd-ink)}
+.article blockquote{margin:20px 0;padding:14px 20px;border-left:4px solid #13508e;background:var(--gsd-paper)}
+.article input,.article select,.article textarea{max-width:100%}
+.sidebar{position:sticky;top:20px;max-height:calc(100vh - 32px);overflow:auto;display:grid;gap:18px;min-width:0;align-content:start}
+.gsd-side-cta{padding:22px 22px 24px;border:1.5px solid var(--gsd-blue);--gsd-gfill:var(--gsd-blue)}
+.gsd-side-cta .gsd-glyph{width:112px;height:112px;color:#fff;float:right;margin:-6px -8px 4px 8px}
+.gsd-side-cta .gsd-side-title{font:700 25px/1.08 var(--gsd-cond);text-transform:uppercase;color:#fff;margin:0 0 10px}
+.gsd-side-cta p{font-size:16px;line-height:1.5;color:#e9f2fb}
+.gsd-side-cta .gsd-btn{clear:both;margin-top:4px}
+.sidebar-panel{background:var(--gsd-sheet);border:1px solid var(--gsd-grid);border-top:3px solid var(--gsd-blue);padding:20px 22px;font-size:16px;line-height:1.5}
+.sidebar-panel h3{font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-blue);margin:0 0 10px}
+.sidebar-panel ul{padding-left:18px;margin:0}.sidebar-panel li{margin:0 0 8px}.sidebar-panel p{margin:0}
+.breadcrumb{width:min(1200px,calc(100% - 96px));margin:32px auto 0}
+.breadcrumb-inner{max-width:none!important;padding:0}
+.wrap{width:min(1200px,calc(100% - 96px));margin:22px auto 84px}
+.follow-sidebar-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start}
+.panel{min-width:0;background:var(--gsd-sheet);border:1px solid var(--gsd-grid);border-top:4px solid var(--gsd-blue);padding:40px 48px}
+.panel h1{font-size:clamp(32px,3.4vw,48px);text-transform:uppercase}.panel h2{font-size:26px;margin-top:32px}.panel a{color:#0066cc}.panel a:visited{color:#0052a3}
+[data-follow-sidebar]{position:sticky;top:20px;align-self:start;min-width:0}
+.follow-sidebar-panel{background:var(--gsd-sheet);border:1px solid var(--gsd-grid);border-top:3px solid var(--gsd-blue);padding:20px 22px}
+.follow-sidebar-panel h2{font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-blue)}
+.follow-sidebar-panel ul{list-style:none;margin:0;padding:0}.follow-sidebar-panel li{padding:6px 0;border-bottom:1px solid var(--gsd-grid)}
+.gsd-blog-head-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;padding:64px 0 56px}
+.gsd-blog-head h1{color:#fff;font-size:clamp(44px,5vw,76px);text-transform:uppercase;margin:0 0 12px}.gsd-blog-head p{margin:0;color:#e9f2fb;max-width:640px}
+.gsd-blog{padding:56px 0 84px}
+.gsd-tool-hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center;padding:64px 0 72px}
+.gsd-tool-hero h1{color:#fff;font-size:clamp(40px,4.6vw,70px);line-height:.98;text-transform:uppercase;margin:0 0 22px}
+.gsd-facts{display:flex;flex-wrap:wrap;gap:8px 26px;list-style:none;padding:0;margin:22px 0 14px;font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.gsd-facts li::before{content:"\25B8\00A0";color:var(--gsd-line)}
+.gsd-small{font-size:15.5px;color:#e9f2fb;max-width:600px}
+.gsd-maker{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:44px;align-items:start;padding:64px 0 80px}
+.gsd-controls{min-width:0}
+.gsd-step{border:1.5px solid var(--gsd-blue);background:var(--gsd-sheet);margin:0 0 24px;padding:0 22px 20px;min-width:0}
+.gsd-step>legend{font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--gsd-blue);padding:6px 12px;margin:0 0 0 -8px}
+.gsd-step h2{font-size:24px;font-weight:600;margin:14px 0 4px}
+.gsd-hint{font-size:15.5px;color:var(--gsd-muted);margin:0 0 12px}
+.gsd-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.gsd-tool label{font-weight:600}
+.gsd-field-in{display:grid;gap:4px;font-size:16px}
+.gsd-tool input[type=text],.gsd-tool select{width:100%;border:1.5px solid var(--gsd-muted);background:#fff;color:var(--gsd-ink);padding:9px 11px;border-radius:0;font:500 15px/1.3 var(--gsd-mono)}
+.gsd-tool input[type=text]:focus,.gsd-tool select:focus{border-color:var(--gsd-blue)}
+.gsd-choices{display:flex;flex-wrap:wrap;gap:10px}
+.gsd-choices label{display:flex;align-items:center;gap:8px;border:1.5px solid var(--gsd-grid);background:#fff;padding:9px 14px;cursor:pointer;font-size:16px}
+.gsd-choices label:has(input:checked){border-color:var(--gsd-blue);box-shadow:inset 0 0 0 1px var(--gsd-blue);background:var(--gsd-wash)}
+.gsd-choices input,.gsd-cmd input[type=checkbox]{accent-color:var(--gsd-blue);width:18px;height:18px;margin:0;flex:none}
+.gsd-cmds{list-style:none;margin:0;padding:0}
+.gsd-cmd{display:grid;grid-template-columns:auto 46px minmax(0,1fr) 128px;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--gsd-grid)}
+.gsd-cmd .gsd-glyph{width:46px;height:46px;color:var(--gsd-blue)}
+.gsd-cmd-name{font-weight:600;font-size:17px;line-height:1.25;cursor:pointer;min-width:0}.gsd-cmd-name small{display:block;font-weight:400;font-size:14.5px;color:var(--gsd-muted)}
+.gsd-cmd:has(input[type=checkbox]:not(:checked)) .gsd-glyph,.gsd-cmd:has(input[type=checkbox]:not(:checked)) .gsd-cmd-name{opacity:.55}
+.gsd-preview{position:sticky;top:20px;min-width:0}
+.gsd-preview-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.gsd-preview-head h2{font-size:24px;text-transform:uppercase;margin:0}
+.gsd-count{font:500 12.5px/1.5 var(--gsd-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gsd-muted);margin:0}
+.gsd-sheet{background:#fff;border:1.5px solid var(--gsd-blue);box-shadow:8px 8px 0 var(--gsd-grid);line-height:0}
+.gsd-sheet svg{display:block;width:100%;height:auto}
+.gsd-out{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.gsd-tool button.gsd-quiet{background:transparent;color:var(--gsd-blue)}
+.gsd-error{color:var(--gsd-red);font-weight:600;min-height:1.7em;margin:14px 0 0}
+.gsd-status{font-size:15.5px;color:var(--gsd-muted);min-height:1.5em;margin:8px 0 0}
+.gsd-uses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:gsduse}
+.gsd-uses li{counter-increment:gsduse;border-top:1.5px solid var(--gsd-blue);padding-top:14px}
+.gsd-uses li::before{content:"Note " counter(gsduse,decimal-leading-zero);display:block;font:500 12px/1.4 var(--gsd-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gsd-blue);margin-bottom:8px}
+.gsd-uses h3{font-size:22px;font-weight:600}.gsd-uses p{color:var(--gsd-muted);font-size:17px}
+.gsd-related{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 36px}
+.gsd-related li{border-top:1px solid var(--gsd-grid);padding:14px 0;font-weight:600;font-size:19px;line-height:1.35}
+.gsd-related a{color:#0066cc}
+.gsd-print-sheet{display:none}
+@media(min-width:1025px) and (max-width:1439px){body{font-size:17.5px}.gsd-shell,.layout,.wrap,.breadcrumb{width:calc(100% - 128px)}.gsd-hero-in{gap:56px}.gsd-hero h1{font-size:72px}.gsd-nav{gap:20px}.gsd-nav a{font-size:12.5px}.gsd-brand b{font-size:21px}.gsd-maker{gap:32px}}
+@media(max-width:1180px){.gsd-brand span:nth-child(3){display:none}.gsd-brand{grid-template-columns:repeat(2,auto)}}
+@media(max-width:1024px){.gsd-shell,.layout,.wrap,.breadcrumb{width:calc(100% - 56px)}.gsd-hero-in,.gsd-tool-hero-in{gap:40px;padding:56px 0}.gsd-hero h1{font-size:58px}.gsd-nav{gap:14px}.gsd-nav a{letter-spacing:.06em;font-size:12px}.gsd-nav a span{display:none}.gsd-brand b{font-size:19px}.layout,.follow-sidebar-layout{grid-template-columns:minmax(0,1fr) 260px;gap:28px}.article,.panel{padding:32px 28px}.gsd-sample{grid-template-columns:repeat(2,minmax(0,1fr))}.gsd-register,.gsd-routes,.gsd-uses,.gsd-related{grid-template-columns:repeat(2,minmax(0,1fr))}.gsd-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.gsd-tb{grid-template-columns:1fr 1fr}.gsd-tb>:nth-child(3){border-left:0}.gsd-tb>:nth-child(n+3){border-top:1px solid #3a6a9c}.gsd-maker{grid-template-columns:1fr}.gsd-preview{position:static}.article table{display:block;overflow-x:auto}}
+@media(max-width:767px){body{font-size:17px}.gsd-shell,.layout,.wrap,.breadcrumb{width:calc(100% - 40px)}
+.gsd-top-in{padding:12px 0;gap:12px}.gsd-nav{display:none}.gsd-brand b{font-size:17px;padding:9px 10px 7px}.gsd-brand span{font-size:9.5px;padding:6px 8px}
+.gsd-index{display:block}.gsd-index summary{list-style:none;cursor:pointer;border:1.5px solid #fff;padding:11px 12px;font:500 12px/1 var(--gsd-mono);letter-spacing:.12em;text-transform:uppercase;color:#fff}
+.gsd-index summary::-webkit-details-marker{display:none}.gsd-index[open] summary{background:var(--gsd-sheet);color:var(--gsd-blue)}
+.gsd-index nav{position:absolute;left:0;right:0;top:100%;z-index:50;background:var(--gsd-sheet);border-bottom:4px solid var(--gsd-blue);padding:10px 20px 20px;box-shadow:0 12px 24px rgba(10,45,82,.25)}
+.gsd-index-main,.gsd-index-main:visited{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:baseline;max-width:440px;color:var(--gsd-ink);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--gsd-grid);font:700 24px/1.15 var(--gsd-cond);text-transform:uppercase}
+.gsd-index-main span{font:500 12px/1 var(--gsd-mono);letter-spacing:.1em;color:var(--gsd-blue)}
+.gsd-index-more{display:flex;flex-wrap:wrap;gap:2px 20px;margin:12px 0 0}.gsd-index-more a{font:500 13px/2.6 var(--gsd-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--gsd-blue)}
+.gsd-hero-in,.gsd-tool-hero-in,.gsd-blog-head-in,.gsd-close-in{grid-template-columns:1fr;padding:40px 0 52px;gap:44px}.gsd-hero h1{font-size:44px}.gsd-lead{font-size:19px}
+.gsd-detail{margin:0 10px}.gsd-callout,.gsd-callout:visited{left:-10px;bottom:16px;font-size:15px;max-width:230px}.gsd-callout b{width:34px;height:34px}
+.gsd-section{padding:52px 0}.gsd-head{display:block}.gsd-head .gsd-textlink{display:inline-block;margin-top:14px}
+.gsd-register,.gsd-routes,.gsd-steps,.gsd-uses,.gsd-related,.layout,.follow-sidebar-layout,.gsd-row{grid-template-columns:1fr}
+.gsd-sample{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gsd-sig{padding:12px 12px 14px}.gsd-sig-top{display:block}.gsd-sig-top b{display:block;font-size:22px}.gsd-sig p{font-size:14.5px}
+.gsd-routes{row-gap:40px}.gsd-steps{border-top:0}.gsd-steps::before,.gsd-steps::after{display:none}.gsd-steps li{border-top:1.5px solid var(--gsd-blue)}.gsd-steps li::after{display:none}
+.gsd-bom td:first-child{width:auto;padding-right:10px}.gsd-bom td:nth-child(2){font-size:38px;width:auto}.gsd-bom td{font-size:16.5px}.gsd-bom th:first-child{padding-right:10px}
+.gsd-tb{grid-template-columns:1fr 1fr}.gsd-tb>*{border-left:0;border-top:1px solid #3a6a9c}.gsd-tb>:first-child{border-top:0}.gsd-tb>:first-child,.gsd-tb>:last-child{grid-column:1/-1}.gsd-tb>:nth-child(3){border-left:1px solid #3a6a9c}.gsd-tb>*{padding:18px 16px}.gsd-close-in{padding:56px 0}.gsd-stamp{justify-items:start}
+.layout{margin:28px auto 56px;gap:32px}.sidebar,[data-follow-sidebar]{position:static;max-height:none;overflow:visible}
+.article,.panel{padding:24px 18px}.article h2{font-size:26px}.gsd-post-head .lead{font-size:18px}.gsd-post-head .hero-photo img{aspect-ratio:4/3}
+.gsd-step{padding:0 14px 16px}.gsd-cmd{grid-template-columns:auto 40px minmax(0,1fr);row-gap:6px}.gsd-cmd .gsd-glyph{width:40px;height:40px}.gsd-cmd input[type=text]{grid-column:2/-1}
+.gsd-maker{padding:40px 0 56px}.gsd-out .gsd-btn,.gsd-out button{flex:1 1 100%;justify-content:center}}
+@media print{body{background:#fff;color:#000;font-size:12pt}.gsd-skip,.gsd-top,.gsd-ruler,.gsd-foot,.sidebar,[data-follow-sidebar]{display:none!important}.layout,.follow-sidebar-layout{display:block;width:100%;margin:0}.article,.panel{border:0;padding:0;margin:0;background:#fff}.gsd-shell{width:100%}
+body.gsd-tool-page>*:not(main),.gsd-tool>*{display:none!important}body.gsd-tool-page .gsd-tool>.gsd-print-sheet{display:block!important}.gsd-print-sheet svg{display:block;width:100%;height:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head>
 <body>
-<header class="sc-topbar">
-  <div class="sc-topbar-inner">
-    <a class="sc-topbar-brand" href="/">German Shepherd Guide</a>
-    <nav>
-      <ul class="sc-topbar-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog.html" aria-current="page">Blog</a></li>
-        <li><a href="/care.html">Care</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        <li><a href="/sitemap.html">Sitemap</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-<!-- TOP BAR -->
-
-
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="/">Home</a><span>›</span> Blog
-</div>
-</div>
-
-<!-- PAGE LAYOUT -->
-<section class="sd-cover sd-ledger">
-  <div class="sd-cover-text">
-    <h1>All guides about German Shepherds</h1>
-    <p class="intro">Every article on German Shepherd Guide in one place, newest first. New guides appear at the top of the list.</p>
-    <div class="categories">
-      <span class="cat-tag">Care Tips</span>
-      <span class="cat-tag">Breed Facts</span>
-      <span class="cat-tag">Health</span>
-      <span class="cat-tag">Training</span>
-    </div>
-  </div>
-  <div class="sd-art" aria-hidden="true"></div>
-</section>
-<div class="page-wrap" data-follow-parent="true">
-
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-
-    
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-puppy-portions.html" style="color:#74330b; text-decoration:none;">German Shepherd Puppy Feeding: Owner Amounts vs. Bag Charts</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-11-05</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd puppy feeding amounts from owners, compared with a bag chart. Check cups, calories and daily portions without guessing from appetite alone.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-deshedding-tools.html" style="color:#74330b; text-decoration:none;">German Shepherd Deshedding Tools: 50 Owner Comments</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-11-04</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd deshedding tools tallied from 50 owner comments: compare rakes, slickers and blowers, see brushing routines, and build your own grooming plan.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-patrolling-night.html" style="color:#74330b; text-decoration:none;">German Shepherd Patrolling at Night: Causes and Calm Routine</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-10-27</p>
-            <p style='color:#555; margin:8px 0 0;'>Why does your German Shepherd patrol the house at night? Decode the cause with our quiz, learn when to call the vet, and build a calm bedtime routine.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-schedule-full-time-workers.html" style="color:#74330b; text-decoration:none;">German Shepherd Schedule for Full-Time Workers: 4 Plans</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-10-18</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd daily schedule for full-time workers: calm 9-to-5, puppy and 12-hour shift routines, alone-time limits, and a planner for your own hours.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-daily-walk-distance.html" style="color:#74330b; text-decoration:none;">German Shepherd Daily Walk Distance: 30 Owner Routines</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-10-18</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd daily walk distance from 30 real owner routines: median about 4 miles, by age from puppy to senior, plus a tool to compare your own walks.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-teenage-phase.html" style="color:#74330b; text-decoration:none;">German Shepherd Teenage Phase: Monthly Training Plan</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-10-14</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd teenage phase month by month: use a 6–24-month training plan, compare show and working lines, and build recall, leash skills, and calm habits.</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/open-laparoscopic-gastropexy.html" style="color:#74330b; text-decoration:none;">Gastropexy: Open vs. Laparoscopic Options for GSDs</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-10-09</p>
-            <p style='color:#555; margin:8px 0 0;'>Compare gastropexy options for your German Shepherd: understand open and laparoscopic quotes, recovery restrictions, and evidence before talking with your vet.</p>
-        </article>
-        
-        
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/german-shepherd-puppy-biting-phase-how-long.html" style="color:#74330b; text-decoration:none;">German Shepherd puppy biting phase how long</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-05-22</p>
-            <p style='color:#555; margin:8px 0 0;'>German Shepherd puppy biting phase how long</p>
-        </article>
-        <article style="background:#f9f9f9; border-left:4px solid #92400e; padding:20px; margin-bottom:24px; border-radius:4px;">
-            <h2 style="margin-top:0; font-size:1.2rem;">
-                <a href="/why-does-my-german-shepherd-follow-me-everywhere.html" style="color:#74330b; text-decoration:none;">Why does my German Shepherd follow me everywhere</a>
-            </h2>
-            <p style='color:#888; font-size:0.85rem; margin:4px 0;'>2026-05-22</p>
-            <p style='color:#555; margin:8px 0 0;'>Why does my German Shepherd follow me everywhere</p>
-        </article>
-    
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar" data-follow-sidebar="existing">
-    
-    
-
-    <div class="sidebar-about">
-      <strong>About German Shepherd Guide</strong>
-      Dedicated to German Shepherd owners and enthusiasts. In-depth guides, care tips, and national dog day coverage.
-    </div>
-
-    <div class="sidebar-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="/blog.html">Latest Articles</a></li>
-        <li><a href="/care.html">German Shepherd Care Guide</a></li>
-        <li><a href="/about.html">About Us</a></li>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="/sitemap.html">Sitemap</a></li>
-      </ul>
-      <h4>Latest articles</h4><ul><li><a href="/german-shepherd-puppy-portions.html">German Shepherd Puppy Feeding: Owner Amounts vs. Bag Charts</a></li><li><a href="/german-shepherd-deshedding-tools.html">German Shepherd Deshedding Tools: 50 Owner Comments</a></li><li><a href="/german-shepherd-patrolling-night.html">German Shepherd Patrolling at Night: Causes and Calm Routine</a></li><li><a href="/german-shepherd-schedule-full-time-workers.html">German Shepherd Schedule for Full-Time Workers: 4 Plans</a></li><li><a href="/german-shepherd-daily-walk-distance.html">German Shepherd Daily Walk Distance: 30 Owner Routines</a></li><li><a href="/german-shepherd-teenage-phase.html">German Shepherd Teenage Phase: Monthly Training Plan</a></li></ul>
-    </div>
-  </aside>
-
-</div>
-
-<!-- FULL-WIDTH EMAIL BLOCK (wszystkie blogi) -->
-
-
-<!-- FOOTER -->
-
-
-
-
-<script>
-  function handleSidebarSubmit(e) {
-    e.preventDefault();
-    var btn = e.target.querySelector('button');
-    btn.textContent = 'Thanks! ✓';
-    return false;
-  }
-  function handleBannerSubmit() {
-    var em = document.getElementById('banner-email');
-    if (!em || !em.value.includes('@')) return;
-    em.value = '';
-    em.placeholder = 'Thanks! ✓';
-    em.disabled = true;
-  }
-  function handleBottomSubmit() {
-    var em = document.getElementById('bottom-email');
-    if (!em || !em.value.includes('@')) return;
-    em.value = '';
-    em.placeholder = 'Thanks! ✓';
-    em.disabled = true;
-  }
-  function handleEmbedSubmit(e) {
-    e.preventDefault();
-    var btn = e.target.querySelector('button');
-    btn.textContent = 'Thanks! ✓';
-    return false;
-  }
-</script>
-<footer class="sc-footer">
-  <div class="sc-footer-nav">
-    <a href="/">Home</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/sitemap.html">Sitemap</a>
-  </div>
-  <p>&copy; 2026 german-shepherd-guide.github.io &mdash; German Shepherd Guide. All rights reserved.</p>
-</footer>
-</body>
+<a class="gsd-skip" href="#content">Skip to content</a><header class="gsd-top gsd-field"><div class="gsd-shell gsd-top-in"><a class="gsd-brand" href="/"><b>German Shepherd Guide</b><span>Dwg GSD-01</span><span>Scale 1:1</span><span>Handler notes</span></a><nav class="gsd-nav" aria-label="Main"><a href="/blog.html"><span>01</span>Field notes</a><a href="/care.html"><span>02</span>Care</a><a href="/about.html"><span>03</span>About</a><a href="/contact.html"><span>04</span>Contact</a><a class="gsd-nav-cta" data-gsd-cta="nav" href="/german-shepherd-command-poster.html"><span>A-01</span>Command poster</a></nav><details class="gsd-index"><summary aria-label="Open the sheet index">Index</summary><nav aria-label="Mobile"><a class="gsd-index-main" data-gsd-cta="nav_mobile" href="/german-shepherd-command-poster.html"><span>A-01</span>Command poster &rarr;</a><a class="gsd-index-main" href="/blog.html"><span>A-02</span>Field notes &rarr;</a><p class="gsd-index-more"><a href="/">Home</a><a href="/care.html">Care</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/sitemap.html">Sitemap</a></p></nav></details></div></header><div class="gsd-ruler" aria-hidden="true"></div><main id="content"><section class="gsd-blog-head gsd-field"><div class="gsd-shell gsd-blog-head-in"><div><p class="kicker">Drawing register &middot; all sheets</p><h1>Field notes</h1><p>Every German Shepherd Guide article, newest first. Original publication dates are kept.</p></div><a class="gsd-btn gsd-light" data-gsd-cta="blog" href="/german-shepherd-command-poster.html">Draw my command poster &rarr;</a></div></section><div class="gsd-shell gsd-blog"><div class="gsd-register gsd-register-all"><article class="card gsd-card"><p class="kicker">Owner notes</p><h2><a href="/german-shepherd-puppy-portions.html">German Shepherd Puppy Feeding: Owner Amounts vs. Bag Charts</a></h2><p class="card-date">2026-11-05</p><p>German Shepherd puppy feeding amounts from owners, compared with a bag chart. Check cups, calories and daily portions without guessing from appetite alone.</p></article><article class="card gsd-card"><p class="kicker">Deshedding tool picks</p><h2><a href="/german-shepherd-deshedding-tools.html">German Shepherd Deshedding Tools: 50 Owner Comments</a></h2><p class="card-date">2026-11-04</p><p>German Shepherd deshedding tools tallied from 50 owner comments: compare rakes, slickers and blowers, see brushing routines, and build your own grooming plan.</p></article><article class="card gsd-card"><p class="kicker">Patrolling the house at night</p><h2><a href="/german-shepherd-patrolling-night.html">German Shepherd Patrolling at Night: Causes and Calm Routine</a></h2><p class="card-date">2026-10-27</p><p>Why does your German Shepherd patrol the house at night? Decode the cause with our quiz, learn when to call the vet, and build a calm bedtime routine.</p></article><article class="card gsd-card"><p class="kicker">Schedule for full-time workers</p><h2><a href="/german-shepherd-schedule-full-time-workers.html">German Shepherd Schedule for Full-Time Workers: 4 Plans</a></h2><p class="card-date">2026-10-18</p><p>German Shepherd daily schedule for full-time workers: calm 9-to-5, puppy and 12-hour shift routines, alone-time limits, and a planner for your own hours.</p></article><article class="card gsd-card"><p class="kicker">Daily walk distance</p><h2><a href="/german-shepherd-daily-walk-distance.html">German Shepherd Daily Walk Distance: 30 Owner Routines</a></h2><p class="card-date">2026-10-18</p><p>German Shepherd daily walk distance from 30 real owner routines: median about 4 miles, by age from puppy to senior, plus a tool to compare your own walks.</p></article><article class="card gsd-card"><p class="kicker">Teenage training</p><h2><a href="/german-shepherd-teenage-phase.html">German Shepherd Teenage Phase: Monthly Training Plan</a></h2><p class="card-date">2026-10-14</p><p>German Shepherd teenage phase month by month: use a 6–24-month training plan, compare show and working lines, and build recall, leash skills, and calm habits.</p></article><article class="card gsd-card"><p class="kicker">Gastropexy options</p><h2><a href="/open-laparoscopic-gastropexy.html">Gastropexy: Open vs. Laparoscopic Options for GSDs</a></h2><p class="card-date">2026-10-09</p><p>Compare gastropexy options for your German Shepherd: understand open and laparoscopic quotes, recovery restrictions, and evidence before talking with your vet.</p></article><article class="card gsd-card"><p class="kicker">Owner notes</p><h2><a href="/german-shepherd-puppy-biting-phase-how-long.html">German Shepherd puppy biting phase how long</a></h2><p class="card-date">2026-05-22</p><p>German Shepherd puppy biting phase how long</p></article><article class="card gsd-card"><p class="kicker">Owner notes</p><h2><a href="/why-does-my-german-shepherd-follow-me-everywhere.html">Why does my German Shepherd follow me everywhere</a></h2><p class="card-date">2026-05-22</p><p>Why does my German Shepherd follow me everywhere</p></article></div></div></main><footer class="gsd-foot"><div class="gsd-shell"><div class="gsd-tb"><div><span class="gsd-tb-h">Project</span><b>German Shepherd Guide</b><p>Practical notes for German Shepherd owners on training, routines and everyday life. Articles are written with AI assistance and checked against their linked sources before publishing.</p><a class="gsd-btn gsd-light" data-gsd-cta="footer" href="/german-shepherd-command-poster.html">Command poster &rarr;</a></div><nav aria-label="Sheets"><span class="gsd-tb-h">Sheets</span><ul><li><a href="/">Home</a></li><li><a href="/blog.html">Field notes</a></li><li><a href="/care.html">Care guides</a></li><li><a href="/german-shepherd-command-poster.html">Command poster</a></li><li><a href="/sitemap.html">Sitemap</a></li></ul></nav><nav aria-label="The house"><span class="gsd-tb-h">House</span><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/editorial-policy.html">Editorial policy</a></li><li><a href="/disclosure.html">Disclosure</a></li><li><a href="/privacy.html">Privacy</a></li></ul></nav><div><span class="gsd-tb-h">Revision</span><p class="gsd-rev">2026-11-04<br>Blueprint layout and the hand-signal command poster.</p></div></div><div class="gsd-legal"><span class="gsd-scale"><i aria-hidden="true"></i>Scale 1:1</span><span>&copy; 2026 german-shepherd-guide.github.io &mdash; German Shepherd Guide</span><span>Set in IBM Plex Sans Condensed &amp; IBM Plex Mono</span></div></div></footer>
+<script id="gsd-events">window.dataLayer=window.dataLayer||[];function gsdTrack(n,p){window.dataLayer.push(Object.assign({event:n,site:'german-shepherd-guide'},p||{}));if(window.gtag)window.gtag('event',n,p||{});}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-gsd-cta]');if(a)gsdTrack('gsd_poster_cta_click',{from:a.getAttribute('data-gsd-cta')});});</script></body>
 </html>
